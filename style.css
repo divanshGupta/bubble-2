@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "gilroy", sans-serif;
+    font-size: 10px;
 }
 
 html, body {
@@ -50,6 +51,10 @@ html, body {
     background-color: #fff;
     color: black;
     font-weight: 700;
+    font-size: 20px;
+}
+.elem h3 {
+    font-size: 20px;
 }
 
 #pbtm {
@@ -62,6 +67,7 @@ html, body {
     width: 100%;
     height: calc(100% - 100px);
     padding: 20px;
+    font-size: 20px;
 }
 .bubble {
     display: flex;
@@ -73,7 +79,32 @@ html, body {
     background-color: greenyellow;
     color: #000;
     font-weight: 700;
+    font-size: 2rem;
 }
 .bubble:hover {
     background-color: green;
 }
+
+/* responsiveness */
+
+@media only screen and (max-width: 600px) {
+    #main {
+      background-color: lightblue;
+    }
+    .elem h3 {
+        font-size: 15px;
+    }
+    .elem .box {
+        font-size: 15px;
+    }
+    .bubble {
+        font-size: 15px;
+        width: 40px;
+        height: 40px;
+    }
+    .pbtm {
+        padding: 10px;
+        gap: 8px;
+    }
+    
+  }

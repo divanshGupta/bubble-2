@@ -69,7 +69,7 @@ function start() {
             getNewHit();
         } else {
             document.querySelectorAll("#bubble").addEventListener ("click", function (dets) {
-            dets.navigator.vibrate(100);
+            navigator.vibrate(100);
             })
         }
     })

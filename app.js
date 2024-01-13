@@ -68,8 +68,8 @@ function start() {
             makeBubbles();
             getNewHit();
         } else {
-            document.querySelector("#bubble").addEventListener ("click", function (dets) {
-            dets.target.navigator.vibrate(100);
+            document.querySelectorAll("#bubble").addEventListener ("click", function (dets) {
+            Number(dets.target).navigator.vibrate(100);
             })
         }
     })

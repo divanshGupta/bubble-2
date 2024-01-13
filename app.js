@@ -8,6 +8,7 @@ function start() {
     var numKey;
 
     document.querySelector("#timerValue").textContent = 60;
+    document.querySelector("#scoreval").textContent = 0;
 
     function makeBubbles () {
 
@@ -19,12 +20,12 @@ function start() {
         if (x.matches) {
             for ( var i=1; i<60; i++) {
                 rn =  Math.floor(Math.random()*10);
-                clutter += `<div class="bubble">${rn}</div>`;
+                clutter += `<div id="bubble" class="bubble">${rn}</div>`;
             }
         } else {
             for ( var i=1; i<134; i++) {
                 rn =  Math.floor(Math.random()*10);
-                clutter += `<div class="bubble">${rn}</div>`;
+                clutter += `<div id="bubble" class="bubble">${rn}</div>`;
             }
         }
     }
@@ -60,11 +61,14 @@ function start() {
         document.querySelector("#scoreval").textContent = score;
     }
     document.querySelector("#pbtm").addEventListener ("click", function (dets) {
+
         var clickedNum = Number(dets.target.textContent);
         if (clickedNum === hitRn) {
             increaseScore();
             makeBubbles();
             getNewHit();
+        } else {
+            navigator.vibrate(200);
         }
     })
 

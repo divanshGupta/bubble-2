@@ -69,6 +69,26 @@ html, body {
     padding: 20px;
     font-size: 20px;
 }
+#pbtm #btn {
+    font-size: 20px;
+    width: 80px;
+    padding: 10px;
+    font-weight: 700;
+    background-color: greenyellow;
+    border: none;
+    border-radius: 10px;
+}
+#pbtm #scr{
+    font-size: 25px;
+    color: greenyellow;
+    font-weight: 700;
+}
+#pbtm h1 {
+    font-size: 20px;
+}
+#pbtm button {
+    display: block;
+}
 .bubble {
     display: flex;
     align-items: center;
@@ -79,7 +99,7 @@ html, body {
     background-color: greenyellow;
     color: #000;
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 20px;
 }
 .bubble:hover {
     background-color: green;
@@ -89,7 +109,10 @@ html, body {
 
 @media only screen and (max-width: 600px) {
     #main {
-      background-color: lightblue;
+      background-color: #FF7A7A;
+    }
+    .elem {
+        gap: 10px;
     }
     .elem h3 {
         font-size: 15px;
@@ -99,12 +122,32 @@ html, body {
     }
     .bubble {
         font-size: 15px;
-        width: 40px;
-        height: 40px;
+        background-color: #FF7A7A;
     }
-    .pbtm {
+    #ptop {
+        background-color: #FF7A7A;
+    }
+    #pbtm {
         padding: 10px;
         gap: 8px;
     }
-    
+    #pbtm #btn {
+        font-size: 15px;
+        width: 60px;
+        padding: 10px;
+        background-color: #FF7A7A;
+        border: none;
+        border-radius: 8px;
+    }
+    #pbtm #scr {
+        font-size: 20px;
+        color: #FF7A7A;
+    }
+    #pbtm h1 {
+        font-size: 15px;
+    }
+    #panel {
+        height: 100%;
+        width: 100%;
+    }
   }

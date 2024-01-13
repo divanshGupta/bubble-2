@@ -1,45 +1,81 @@
-var timer = 60;
-var score = 0;
-var hitRn = 0;
-var numKey;
-function makeBubbles () {
+document.querySelector("#pbtm").innerHTML = `<button id="btn" onclick="start()">Start</button>`;
+
+
+function start() {
+    var timer = 5;
+    var score = 0;
+    var hitRn = 0;
+    var numKey;
+
+    document.querySelector("#timerValue").textContent = 5;
+
+    function makeBubbles () {
+
     var clutter = "";
 
-for ( var i=1; i<134; i++) {
-    rn =  Math.floor(Math.random()*10);
-    clutter += `<div class="bubble">${rn}</div>`;
-}
-
-document.querySelector("#pbtm").innerHTML = clutter;
-}
-function runTimer() {
-    var timerint = setInterval (function() {
-        if (timer>0){
-            timer--;
-            document.querySelector("#timerValue").textContent = timer;
+    // responsive
+    var x = window.matchMedia("(max-width: 600px)");
+    function change(x) {
+        if (x.matches) {
+            for ( var i=1; i<60; i++) {
+                rn =  Math.floor(Math.random()*10);
+                clutter += `<div class="bubble">${rn}</div>`;
+            }
         } else {
-            clearInterval(timerint);
-            document.querySelector("#pbtm").innerHTML = `<h1>Game Over. Your score is ${score}</h1>`;
+            for ( var i=1; i<134; i++) {
+                rn =  Math.floor(Math.random()*10);
+                clutter += `<div class="bubble">${rn}</div>`;
+            }
         }
-    }, 1000);
-}
-function getNewHit() {
-    hitRn = Math.floor(Math.random()*10);
-    document.querySelector("#hitval").textContent = hitRn;
-}
-function increaseScore () {
-    score += 10;
-    document.querySelector("#scoreval").textContent = score;
-}
-document.querySelector("#pbtm").addEventListener ("click", function (dets) {
-    var clickedNum = Number(dets.target.textContent);
-    if (clickedNum === hitRn) {
-        increaseScore();
-        makeBubbles();
-        getNewHit();
     }
-})
+    change(x);
+    x.addEventListener("change",function() {
+        change(x);
+    })
+    //responsive
+    
+    document.querySelector("#pbtm").innerHTML = clutter;
+    
+    }
+    
+    
+    function runTimer() {
+        var timerint = setInterval (function() {
+            if (timer>0){
+                timer--;
+                document.querySelector("#timerValue").textContent = timer;
+            } else {
+                clearInterval(timerint);
+                document.querySelector("#pbtm").innerHTML = `<h1>Game Over.<br/> Your score is : <span id="scr">${score}</span></h1><br><button id="btn" onclick="start()">Start Again</button>`;
+                
+            }
+        }, 1000);
+    }
+    function getNewHit() {
+        hitRn = Math.floor(Math.random()*10);
+        document.querySelector("#hitval").textContent = hitRn;
+    }
+    function increaseScore () {
+        score += 10;
+        document.querySelector("#scoreval").textContent = score;
+    }
+    document.querySelector("#pbtm").addEventListener ("click", function (dets) {
+        var clickedNum = Number(dets.target.textContent);
+        if (clickedNum === hitRn) {
+            increaseScore();
+            makeBubbles();
+            getNewHit();
+        }
+    })
 
-runTimer();
-makeBubbles();
-getNewHit();
+    runTimer();
+    makeBubbles();
+    getNewHit();
+
+}
+
+
+
+
+
+

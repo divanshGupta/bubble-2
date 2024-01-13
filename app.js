@@ -68,7 +68,9 @@ function start() {
             makeBubbles();
             getNewHit();
         } else {
+            document.querySelector("#bubble").addEventListener ("click", function (dets) {
             Number(dets.target).navigator.vibrate(100);
+            })
         }
     })
 

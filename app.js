@@ -2,12 +2,12 @@ document.querySelector("#pbtm").innerHTML = `<button id="btn" onclick="start()">
 
 
 function start() {
-    var timer = 5;
+    var timer = 60;
     var score = 0;
     var hitRn = 0;
     var numKey;
 
-    document.querySelector("#timerValue").textContent = 5;
+    document.querySelector("#timerValue").textContent = 60;
 
     function makeBubbles () {
 

@@ -68,7 +68,7 @@ function start() {
             makeBubbles();
             getNewHit();
         } else {
-            navigator.vibrate(200);
+            Number(dets.target).navigator.vibrate(100);
         }
     })
 

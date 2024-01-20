@@ -68,7 +68,7 @@ function start() {
             makeBubbles();
             getNewHit();
         } else {
-            dets.target.navigator.vibrate(100);
+            dets.target.navigator.vibrate(200);
         }
     })
 
